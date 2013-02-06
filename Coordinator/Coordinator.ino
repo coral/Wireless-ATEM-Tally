@@ -1,22 +1,9 @@
 /*****************
- * An GPI/Tally box for Blackmagic ATEM Switchers
- * 
- * This example REQUIRES the Skaarhoj GPIO2x8 shield for Arduino. That particular shield
- * is a general purpose GPIO board but with connectors and curcuitry compatible with
- * Blackmagic-Designs own GPI/Tally box.
- *
- * This example also uses a number of custom libraries which you must install first. 
- * Search for "#include" in this file to find the libraries. Then download the libraries from http://skaarhoj.com/wiki/index.php/Libraries_for_Arduino
- *
- * By default the example will reflect the Program tally state on the 8 camera inputs
- * The GPI inputs will set the corresponding input as Program
- * If you call the functions setTallyPreviewProgramOutputs() and checkGPI_setVarious() instead (see code)
- * you will see a demonstration of alternative configurations - how customized you can work with the ATEM Switcher
- *
- * Works with Ethernet enabled arduino devices (Arduino Ethernet or a model with Ethernet shield)
- * Make sure to configure IP and addresses! Look for "<= SETUP" in the code below!
- *
- * - kasper
+ * Wirless Tally for ATEM
+ * This is the coordinator file which requires a Arduino Ethernet to recieve the packets from the ATEM.
+ * In this file you defined the IP to the switcher
+ * authors: coral
+ * library and example: kasper skaarhoj
  */
 
 
