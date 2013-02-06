@@ -1,0 +1,3 @@
+[submodule "Arduino-Library-for-ATEM-Switchers"]
+	path = Arduino-Library-for-ATEM-Switchers
+	url = https://github.com/kasperskaarhoj/Arduino-Library-for-ATEM-Switchers.git
