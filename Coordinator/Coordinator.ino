@@ -59,9 +59,6 @@ void loop() {
   //setTallyProgramOutputs();    // This will reflect inputs 1-8 Program tally on GPO 1-8
   setTallyPreviewProgramOutputs();    // This will reflect inputs 1-4 Program/Preview tally on GPO 1-8 (in pairs)
 
-
-  //checkGPI_setProgramBus();  // This will select the inputs 1-8 to be on the Program bus.
-  //checkGPI_setVarious();  // This will call all sorts of switcher functions as a demonstration of how much crazy stuff can be done. See the function for more info.
 }
 
 
