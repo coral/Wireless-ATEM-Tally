@@ -1,7 +1,7 @@
 Wireless-ATEM-Tally
 ===================
 
-A Wireless (or wired) tally system for Blackmagic's ATEM vision mixers built upon Arduino Ethernet and Xbee's based upon the Skarhooj code.
+A Wireless (or wired) tally system for Blackmagic's ATEM vision mixers built upon Arduino Ethernet and Xbee's based upon the Skaarhoj code. Developed by Dreamhack AB.
 
 For the first revision of this Tally system you will need the following:
 
@@ -21,3 +21,7 @@ For the first revision of this Tally system you will need the following:
 <b>TODO:</b><br />
 Switch to API mode to use the XBees builtin output to minimize the client cost.<br />
 Actually write the client.
+<br />
+<b>GPL licensed:</b>
+To cite Kasper from his own project: <br/>
+<i>"The library is licensed under GNU GPL v3. It allows you to use the library for any project, even commercial ones, as long as you keep the code using the library open - and deliver a copy to your client. In other words, even though you might deliver a black box hardware device, you still must give your client a copy of the Arduino sketch you have uploaded to the board. And who knows; either they will improve your product, maybe do nothing at all - or mess it up so you can sell some support hours. :-)"</i><br />
