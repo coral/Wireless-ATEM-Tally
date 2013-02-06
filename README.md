@@ -19,5 +19,5 @@ For the first revision of this Tally system you will need the following:
 1 x Green LED (for preview indication)<br />
 <br />
 <b>TODO:</b><br />
-Switch to API mode to use the XBees builtin output to minimize the client cost.
+Switch to API mode to use the XBees builtin output to minimize the client cost.<br />
 Actually write the client.
