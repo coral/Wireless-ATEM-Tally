@@ -32,7 +32,7 @@ ATEM AtemSwitcher;
 void setup() { 
 
   // Start the Ethernet, Serial (debugging) and UDP:
-  Ethernet.begin(mac,ip);
+  Ethernet.begin(mac);
   Serial.begin(9600);
    pinMode(RED, OUTPUT);   
    pinMode(GREEN, OUTPUT);   
@@ -67,16 +67,13 @@ void setTallyPreviewProgramOutputs()  {
   for (uint8_t i=1;i<=4;i++)  {
     if (AtemSwitcher.getProgramTally(i))  {
       Serial.print(i + ",2,T");
-    }  /*     
-    else {
-     digitalWrite(RED, LOW); 
-    } */
+      delay(10);
+    } 
 
     if (AtemSwitcher.getPreviewTally(i))  {
        Serial.print(i + ",1,T");
-     } /*else {
-       digitalWrite(GREEN, LOW); 
-    }*/
+       delay(10);
+     } 
   }
   
 }
