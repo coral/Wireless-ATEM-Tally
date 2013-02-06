@@ -17,3 +17,7 @@ For the first revision of this Tally system you will need the following:
 1 x Xbee Pro (i used S2B RP-SMA) with ZigBee AT Router firmware uploaded.<br />
 1 x Red LED (for program indication)<br />
 1 x Green LED (for preview indication)
+<br />
+<b>TODO:><b><br />
+Switch to API mode to use the XBees builtin output to minimize the client cost.
+Actually write the client.
