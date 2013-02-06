@@ -1,14 +1,14 @@
 Wireless-ATEM-Tally
 ===================
 
-A Wireless (or wired) tally system for <a href="http://www.blackmagicdesign.com/products/atem/">Blackmagic's ATEM vision mixers</a> built upon Arduino Ethernet and Xbee's based upon the <a href="http://skaarhoj.com/">Skaarhoj</a> code. Developed coral at <a href="http://dreamhack.se">Dreamhack AB</a>.
+A Wireless (or wired) tally system for <a href="http://www.blackmagicdesign.com/products/atem/">Blackmagic's ATEM vision mixers</a> built upon Arduino Ethernet and Xbee's based upon the <a href="http://skaarhoj.com/">Skaarhoj</a> code. Developed by <a href="http://jonasbengtson.se">coral</a> at <a href="http://dreamhack.se">Dreamhack AB</a>.
 
 For the first revision of this Tally system you will need the following:
 
 <b>Coordinator</b> (the one interfacing with the ATEM and converting it to wireless):<br />
 1 x <a href="http://arduino.cc/en/Main/ArduinoBoardEthernet">Arduino Ethernet</a><br />
 1 x <a href="http://arduino.cc/en/Main/ArduinoWirelessProtoShield">Xbee Shield of your choice</a><br />
-1 x <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module#overview">Xbee Pro</a> (i used S2B RP-SMA) with ZigBee AT coordinator firmware uploaded (Set to broadcast with <a href="http://www.digi.com/support/productdetail?pid=3352">X-CTU</a>, more info about <a href="https://sites.google.com/site/xbeetutorial/xbee-introduction/zigbee_setup">setting Xbee to broadcast here</a>).<br />
+1 x <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module#overview">Xbee Pro</a> (i used S2B RP-SMA) with ZigBee AT Coordinator firmware uploaded (Set to broadcast with <a href="http://www.digi.com/support/productdetail?pid=3352">X-CTU</a>, more info about <a href="https://sites.google.com/site/xbeetutorial/xbee-introduction/zigbee_setup">setting Xbee to broadcast here</a>).<br />
 
 <br />
 <b>Client</b> (for each client):<br />
