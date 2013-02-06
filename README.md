@@ -10,7 +10,7 @@ Coordinator (the one interfacing with the ATEM and converting it to wireless):<b
 1 x Xbee Shield of your choice<br />
 1 x Xbee Pro (i used S2B RP-SMA) with ZigBee AT coordinator firmware uploaded (Set to broadcast with <a href="http://www.digi.com/support/productdetail?pid=3352">X-CTU</a>, more info about <a href="https://sites.google.com/site/xbeetutorial/xbee-introduction/zigbee_setup">setting Xbee to broadcast here</a>).<br />
 
-<br /><br />
+<br />
 
 Per each client you will need:<br />
 1 x Arduino USB<br />
