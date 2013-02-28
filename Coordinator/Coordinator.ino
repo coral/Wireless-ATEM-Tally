@@ -78,22 +78,16 @@ void setTallyPreviewProgramOutputs()  {
     }
     
     if (last_tally != current_tally)  {
-      if(current_tally == true)
-      {
         Serial.print(current_tally);
         delay(10);
-      }
        last_tally = current_tally;
     }
     
     if (last_preview != current_preview)  {
-      if(current_tally == true)
-      {
         int cp= current_preview + 3;
         Serial.print(cp);
         delay(10);
-      }
-       last_preview = current_preview;
+        last_preview = current_preview;
     }
   
 }

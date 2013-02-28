@@ -1,18 +1,9 @@
-/*****************
- * Wirless Tally for ATEM
- * Client file
- * authors: coral
- * library and example: kasper skaarhoj
- */
+#define VERSION "1.00a0"
 
-//Define the LED pins
-int RED = 7;
-int GREEN = 6;
-int CAMERA_NUMBER = 1;
+int CAMERA = 1;
+int GREEN = 10;
+int RED = 12;
 
-char inData[20]; // Allocate some space for the string
-char inChar; // Where to store the character read
-byte index = 0; // Index into array; where to store the character
 
 void setup() {
   pinMode(RED, OUTPUT);
@@ -20,18 +11,37 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop()
-{
-   while(Serial.available() > 0) // Don't read unless
-                                                  // there you know there is data
-   {
-       if(index < 19) // One less than the size of the array
-       {
-           inChar = Serial.read(); // Read a character
-           inData[index] = inChar; // Store it
-           index++; // Increment where to write next
-           inData[index] = '\0'; // Null terminate the string
-       }
-   }
-   // Now do something with the string (but not using ==)
+
+void loop() {
+  // look for a capital D over the serial port and ring the bell if found
+  if (Serial.available() > 0) {
+    int input = Serial.read() - '0';
+    if (input == CAMERA || input == CAMERA+3) {
+     
+      if(input >= 1 && input <= 3) {
+        if(input == CAMERA){
+          digitalWrite(RED, HIGH);
+        } else {
+          digitalWrite(RED, LOW);
+        }
+      }
+      
+      if(input >= 4 && input <= 6) {
+        if(input == CAMERA + 3){
+          digitalWrite(GREEN, HIGH);
+        } else {
+          digitalWrite(GREEN, LOW);
+        }
+      }
+    } else {
+      if(input >= 1 && input <= 3) {
+        digitalWrite(RED, LOW);
+      }
+      
+      if(input >= 4 && input <= 6) {
+        digitalWrite(GREEN, LOW);
+      }
+    }
+    
+  }
 }
