@@ -1,6 +1,6 @@
 #define VERSION "1.00a0"
 
-int CAMERA = 1;
+int CAMERA = 3;
 int GREEN = 10;
 int RED = 12;
 

@@ -37,11 +37,11 @@ void setup() {
   // Start the Ethernet, Serial (debugging) and UDP:
   Ethernet.begin(mac);
   Serial.begin(9600);
-   pinMode(GREEN, OUTPUT);   
+  pinMode(GREEN, OUTPUT);   
 
   // Initialize a connection to the switcher:
   AtemSwitcher.begin(IPAddress(10, 200, 10, 15), 56417);    // <= SETUP!
- AtemSwitcher.serialOutput(false);
+  AtemSwitcher.serialOutput(false);
   AtemSwitcher.connect();
 }
 
@@ -51,11 +51,11 @@ void loop() {
   // Check for packets, respond to them etc. Keeping the connection alive!
   AtemSwitcher.runLoop();
 
-    // If connection is gone anyway, try to reconnect:
+  // If connection is gone anyway, try to reconnect:
   if (AtemSwitcher.isConnectionTimedOut())  {
     digitalWrite(GREEN, LOW);
-     AtemSwitcher.connect();
-     
+    AtemSwitcher.connect();
+
   } 
   digitalWrite(GREEN, HIGH);
   // Selecting output mode: Let only ONE of the functions below be run - the others must be commented out:
@@ -67,28 +67,29 @@ void loop() {
 
 void setTallyPreviewProgramOutputs()  {
 
-    for (uint8_t i=1;i<=3;i++)  {
-      if (AtemSwitcher.getProgramTally(i))  {
-        current_tally = i;
-      } 
-  
-      if (AtemSwitcher.getPreviewTally(i))  {
-        current_preview = i;
-       } 
-    }
-    
-    if (last_tally != current_tally)  {
-        Serial.print(current_tally);
-        delay(10);
-       last_tally = current_tally;
-    }
-    
-    if (last_preview != current_preview)  {
-        int cp= current_preview + 3;
-        Serial.print(cp);
-        delay(10);
-        last_preview = current_preview;
-    }
-  
+  for (uint8_t i=1;i<=3;i++)  {
+    if (AtemSwitcher.getProgramTally(i))  {
+      current_tally = i;
+    } 
+
+    if (AtemSwitcher.getPreviewTally(i))  {
+      current_preview = i;
+    } 
+  }
+
+  if (last_tally != current_tally)  {
+    Serial.print(current_tally);
+    delay(10);
+    last_tally = current_tally;
+  }
+
+  if (last_preview != current_preview)  {
+    int cp= current_preview + 3;
+    Serial.print(cp);
+    delay(10);
+    last_preview = current_preview;
+  }
+
 }
+
 
