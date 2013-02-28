@@ -10,8 +10,7 @@
 #include <SPI.h>         // needed for Arduino versions later than 0018
 #include <Ethernet.h>
 
-int RED = 7;
-int GREEN = 6;
+int GREEN = 8;
 
 // MAC address and IP address for this *particular* Ethernet Shield!
 // MAC address is printed on the shield
@@ -27,19 +26,22 @@ IPAddress ip(10, 200, 10, 199);              // <= SETUP!
 // Connect to an ATEM switcher on this address and using this local port:
 // The port number is chosen randomly among high numbers.
 ATEM AtemSwitcher;
+int last_tally = 0;
+int current_tally = 0;
 
+int last_preview = 0;
+int current_preview = 0;
 
 void setup() { 
 
   // Start the Ethernet, Serial (debugging) and UDP:
   Ethernet.begin(mac);
   Serial.begin(9600);
-   pinMode(RED, OUTPUT);   
    pinMode(GREEN, OUTPUT);   
 
   // Initialize a connection to the switcher:
-  AtemSwitcher.begin(IPAddress(10, 200, 10, 200), 56417);    // <= SETUP!
-//  AtemSwitcher.serialOutput(true);
+  AtemSwitcher.begin(IPAddress(10, 200, 10, 15), 56417);    // <= SETUP!
+ AtemSwitcher.serialOutput(false);
   AtemSwitcher.connect();
 }
 
@@ -51,10 +53,11 @@ void loop() {
 
     // If connection is gone anyway, try to reconnect:
   if (AtemSwitcher.isConnectionTimedOut())  {
-     Serial.println("Connection to ATEM Switcher has timed out - reconnecting!");
+    digitalWrite(GREEN, LOW);
      AtemSwitcher.connect();
+     
   } 
-
+  digitalWrite(GREEN, HIGH);
   // Selecting output mode: Let only ONE of the functions below be run - the others must be commented out:
   //setTallyProgramOutputs();    // This will reflect inputs 1-8 Program tally on GPO 1-8
   setTallyPreviewProgramOutputs();    // This will reflect inputs 1-4 Program/Preview tally on GPO 1-8 (in pairs)
@@ -63,18 +66,35 @@ void loop() {
 
 
 void setTallyPreviewProgramOutputs()  {
-   // Setting colors of input select buttons:
-  for (uint8_t i=1;i<=4;i++)  {
-    if (AtemSwitcher.getProgramTally(i))  {
-      Serial.print(i + ",2,T");
-      delay(10);
-    } 
 
-    if (AtemSwitcher.getPreviewTally(i))  {
-       Serial.print(i + ",1,T");
-       delay(10);
-     } 
-  }
+    for (uint8_t i=1;i<=3;i++)  {
+      if (AtemSwitcher.getProgramTally(i))  {
+        current_tally = i;
+      } 
+  
+      if (AtemSwitcher.getPreviewTally(i))  {
+        current_preview = i;
+       } 
+    }
+    
+    if (last_tally != current_tally)  {
+      if(current_tally == true)
+      {
+        Serial.print(current_tally);
+        delay(10);
+      }
+       last_tally = current_tally;
+    }
+    
+    if (last_preview != current_preview)  {
+      if(current_tally == true)
+      {
+        int cp= current_preview + 3;
+        Serial.print(cp);
+        delay(10);
+      }
+       last_preview = current_preview;
+    }
   
 }
 
