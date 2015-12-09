@@ -1,7 +1,7 @@
 Wireless-ATEM-Tally
 ===================
 
-A Wireless (or wired) tally system for <a href="http://www.blackmagicdesign.com/products/atem/">Blackmagic's ATEM vision mixers</a> built upon Arduino Ethernet and Xbee's based upon the <a href="http://skaarhoj.com/">Skaarhoj</a> code. Developed by <a href="http://jonasbengtson.se">coral</a> at <a href="http://dreamhack.se">Dreamhack AB</a>.
+A Wireless (or wired) tally system for <a href="http://www.blackmagicdesign.com/products/atem/">Blackmagic's ATEM vision mixers</a> built upon Arduino Ethernet and Xbee's based upon the <a href="http://skaarhoj.com/">Skaarhoj</a> code. Developed by <a href="http://jonasbengtson.se">coral</a>.
 
 For the first revision of this Tally system you will need the following:
 
@@ -25,4 +25,4 @@ Actually write the client.
 <b>GPL licensed:</b><br />
 To cite <a href="https://github.com/kasperskaarhoj/Arduino-Library-for-ATEM-Switchers">Kasper</a> from his own project: <br />
 <i>"The library is licensed under <a href="http://www.gnu.org/licenses/gpl.html">GNU GPL v3</a>. It allows you to use the library for any project, even commercial ones, as long as you keep the code using the library open - and deliver a copy to your client. In other words, even though you might deliver a black box hardware device, you still must give your client a copy of the Arduino sketch you have uploaded to the board. And who knows; either they will improve your product, maybe do nothing at all - or mess it up so you can sell some support hours. :-)"</i><br /><br /><br />
-<img src="http://userserve-ak.last.fm/serve/252/254990.jpg" alt="Klaus Wunderlich">
+<img src="http://www.rixrecords.com/IMG/8140798.jpeg" alt="Klaus Wunderlich">
